@@ -1,0 +1,17 @@
+---
+####    Send Message to Slack    ####
+
+- name: include keys from file
+  include_vars: keys.yml
+
+- name: "Send notification message to Slack"
+  slack:
+    token: '{{ slack_token }}'
+    channel: "{{ slack_channel }}"
+    domain: "{{ slack_domain }}"
+    ## Color value specified should be either one of ['normal', 'good', 'warning', 'danger'] or  
+    ## any valid hex value with length 3 or 6."  
+    color: "#0073AA"
+    link_names: 1
+    parse: "full"
+    msg: "{{ output.url }} returned a {{ output.status }} from {{ output.x_powered_by }}"

@@ -1,0 +1,16 @@
+---
+# use the uri module to get website info  
+
+- name          : "Get content for {{ WEBSITE }}"
+  uri           :
+    url         : "http://{{ WEBSITE }}"
+  register      : output
+
+
+- name: "{{ WEBSITE }} returned: {{ output.status }}"
+  debug:
+    msg: "{{ output.url }} returned a {{ output.status }} on {{ output.date }} from {{ output.x_powered_by }}"
+
+## Include Slack Notification  
+- name: "Send notification to Slack"
+  include: slack-message.yml

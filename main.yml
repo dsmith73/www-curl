@@ -1,0 +1,15 @@
+---
+# Ping a website using ansible to validate availability  
+#### Example launch command for this playbook is:  
+#### ansible-playbook main.yml -e "WEBSITE=www.google.com"  
+
+
+- hosts: localhost
+  gather_facts: true
+  tasks:
+  - name: include vars from file
+    include_vars: vars.yml
+    ## call curl.yml  
+  - include: curl.yml
+    ## loop through X times   
+    with_items: "{{ THE_COUNT }}"
