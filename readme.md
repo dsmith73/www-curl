@@ -8,7 +8,13 @@ ansible-playbook main.yml -e "WEBSITE=www.google.com"
 
 ---
 
-```
+**.gitignore**
+
+```yml
+# keys.yml
+    slack_token   : "XXXXXXXXXXXXXXX"
+    slack_channel : "XXXXXXXXXXXXXXX"
+    slack_domain  : "XXXXXXXXXXXXXXX"
 ```
 
     
