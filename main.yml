@@ -13,3 +13,5 @@
   - include: curl.yml
     ## loop through X times   
     with_items: "{{ THE_COUNT }}"
+    # could switch THE_COUNT with WEBSITE to iterate through a list of websites  
+    
