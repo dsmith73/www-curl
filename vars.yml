@@ -1,3 +1,10 @@
+# Alternately, you could add a list of WEBSITE here - 
+# e.g. with_items: {{ WEBSITE }}
+# WEBSITE
+#   - abc.com
+#   - xyz.org
+
+
 THE_COUNT:
   - 0
   - 1
